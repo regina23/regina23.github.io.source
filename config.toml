@@ -1,0 +1,4 @@
+baseURL = 'https://www.regina23.com/'
+languageCode = zh-cn
+title = "Regina23's Blog"
+theme = "LoveIt"

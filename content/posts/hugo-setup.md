@@ -1,6 +1,6 @@
 ---
 title: "Hugo博客搭建"
-author: regina23
+author: Regina23
 date: 2022-11-02T18:28:54+08:00
 draft: false
 next: /posts/hugo-deployment

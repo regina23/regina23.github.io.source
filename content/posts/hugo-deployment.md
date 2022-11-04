@@ -98,7 +98,7 @@ git push origin master
 name: deploy
 
 on:
-    push: ["master"]
+    push: 
     workflow_dispatch:
 
 jobs:

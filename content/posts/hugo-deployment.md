@@ -92,6 +92,8 @@ git push origin master
 
 在远程仓库新建GitHub Actions->Hugo，会在目录`/.github/workflows/`下，以`.yml`为后缀新建配置文件。
 
+本质是根目录更新时同时推送到GitHub Pages仓库，所以需要修改外部仓库地址为`EXTERNAL_REPOSITORY: regina23/regina23.github.io`，对应根目录的`./public`目录。  
+
 ![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-04-16-28-59-image.png)
 
 ```
@@ -128,4 +130,26 @@ jobs:
                   PUBLISH_BRANCH: master
                   PUBLISH_DIR: ./public
                   commit_message: ${{ github.event.head_commit.message }}
+```
+
+此外，从博客仓库推送到外部 GitHub Pages 仓库，需要特定权限，在GitHub账户下Settings->Developer settings->Personal access tokens (classic)，新建token，权限选择repo和workflow。
+
+![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-07-17-00-01-image.png)
+
+复制生成的TOKEN，在博客源仓库Settings->Secrets->Actions新建名称为`PERSONAL_TOKEN`内容为TOKEN的变量。
+
+### 3.3 测试
+
+完成后，本地根目录推送到远程源代码仓库，即可触发GitHub Actions，自动生成Hugo博客页面并推送到GitHub Pages仓库，然后部署发布到网站。
+
+#### 
+
+##### 如果出现报错：`No url found for submodule path '.public'`
+
+需要将public模块和根目录关联，在`qiuckstart/.gitmodules`添加：
+
+```
+[submodule "public"]
+    path = public
+    url = https://github.com/regina23/regina23.github.io.git
 ```

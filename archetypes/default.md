@@ -1,8 +1,12 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-author: ["Regina23"]
+author: ["Regina"]
 date: {{ .Date }}
 lastmod: {{ .Date }}
-draft: true
+draft: false
+toc:
+  enable: true
+categories: [""]
+tags: [""]
 ---
 

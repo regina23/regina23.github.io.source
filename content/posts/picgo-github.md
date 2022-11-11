@@ -1,6 +1,6 @@
 ---
 title: "Picgo + github搭建图床"
-author: ["Regina"]
+author: "Regina"
 date: 2022-11-10T17:50:55+08:00
 lastmod: 2022-11-10T17:50:55+08:00
 draft: false

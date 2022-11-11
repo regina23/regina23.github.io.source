@@ -1,6 +1,6 @@
 ---
 title: "Hugo博客自动部署"
-author: Regina23
+author: "Regina"
 date: 2022-11-03T14:21:52+08:00
 draft: false
 prev: posts/hugo-setup

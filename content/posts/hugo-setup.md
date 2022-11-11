@@ -107,7 +107,7 @@ draft: true
 
 ### 7. 修改项目配置
 
-修改config.toml
+修改config.toml，可参考/themes/LoveIt/exampleSite/config.toml
 
 ```
 baseURL = 'https://www.regina23.com/'

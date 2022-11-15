@@ -6,8 +6,6 @@ lastmod: 2022-11-10T17:50:55+08:00
 draft: false
 toc:
   enable: true
-categories: [""]
-tags: [""]
 prev: /posts/hugo-deployment
 ---
 

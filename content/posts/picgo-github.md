@@ -9,16 +9,47 @@ toc:
 prev: /posts/hugo-deployment
 ---
 
-### 1. Github设置
+### 1. Github创建图床仓库
 
 1.1 GitHub新建仓库用于存放图片
 
 1.2 GitHub新建Token，权限选择repo、write:packages、delete:packages、admin:org、admin:public_key、admin:repo_hook、project
 
-### 2. PicGo设置
+### 2. PicGo-Core安装和设置
 
-picgo选择Github仓库，填写仓库名称、分支、token、路径（选填）等信息
+2.1 安装Node.js
 
-### 3. MerkText设置
+```
+brew install node
+```
 
-preference -> Image目录下选择使用picgo上传图片
+2.2 安装PicGo-Core
+
+```
+// 全局安装
+npm install picgo -g
+```
+
+2.3 修改PicGo-Core配置文件
+
+通过以下命令进入交互式命令行，设置GitHub仓库名、分支名、token等信息。
+
+```
+picgo set uploader
+```
+
+或修改配置文件设置picBed，macOS默认配置文件位置为`~/.picgo/config.json`。
+
+2.4 使用时间戳
+
+安装插件
+
+```
+picgo install super-prefix
+```
+
+2.5 上传测试
+
+使用`picgo upload xxx.png`上传图片，显示PicGo SUCCESS
+
+![image-20221122203320672](https://raw.githubusercontent.com/regina23/Picture/main/blog/20221122203329.png)

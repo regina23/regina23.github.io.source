@@ -13,21 +13,21 @@ next: posts/picgo-github
 
 新建仓库名称为`username.github.io`格式，并选择默认的Public。
 
-![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-03-17-59-53-image.png)
+![](https://raw.githubusercontent.com/regina23/Picture/main/blog/20221122203453.png)
 
 ### 1.2 购买域名
 
 在[Cloudflare](https://www.cloudflare.com/zh-cn/)注册账号，选择注册域名，搜索想注册的域名然后购买完成注册。
 
-![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-03-14-35-10-image.png)
+![](https://raw.githubusercontent.com/regina23/Picture/main/blog/20221122203500.png)
 
 ### 1.3 域名托管
 
 选择Websites里面的域名进入域名管理页面，添加DNS记录，选择CNAME，添加子域名www，指向GitHub Pages地址。
 
-![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-03-15-02-24-image.png)
+![](https://raw.githubusercontent.com/regina23/Picture/main/blog/20221122203504.png)
 
-![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-03-17-54-05-image.png)
+![](https://raw.githubusercontent.com/regina23/Picture/main/blog/20221122203507.png)
 
 ## 2. GitHub Pages托管
 
@@ -68,7 +68,7 @@ git push origin master
 
 进入1.1新建的GitHub仓库，在Settings -> Pages确认部署的分支并保存，然后配置自定义域名并保存。
 
-![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-03-18-04-45-image.png)
+![](https://raw.githubusercontent.com/regina23/Picture/main/blog/20221122203513.png)
 
 此时，打开域名网址可以看到博客以及部署上去了。
 
@@ -95,7 +95,7 @@ git push origin master
 
 本质是根目录更新时同时推送到GitHub Pages仓库，所以需要修改外部仓库地址为`EXTERNAL_REPOSITORY: regina23/regina23.github.io`，对应根目录的`./public`目录。  
 
-![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-04-16-28-59-image.png)
+![](https://raw.githubusercontent.com/regina23/Picture/main/blog/20221122203523.png)
 
 ```
 name: deploy
@@ -135,7 +135,7 @@ jobs:
 
 此外，从博客仓库推送到外部 GitHub Pages 仓库，需要特定权限，在GitHub账户下Settings->Developer settings->Personal access tokens (classic)，新建token，权限选择repo和workflow。
 
-![](/Users/reginaren/Library/Application%20Support/marktext/images/2022-11-07-17-00-01-image.png)
+![](https://raw.githubusercontent.com/regina23/Picture/main/blog/20221122203534.png)
 
 复制生成的TOKEN，在博客源仓库Settings->Secrets->Actions新建名称为`PERSONAL_TOKEN`内容为TOKEN的变量。
 
@@ -143,7 +143,9 @@ jobs:
 
 完成后，本地根目录推送到远程源代码仓库，即可触发GitHub Actions，自动生成Hugo博客页面并推送到GitHub Pages仓库，然后部署发布到网站。
 
-#### 
+
+
+
 
 ##### 如果出现报错：`No url found for submodule path '.public'`
 

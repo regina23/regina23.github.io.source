@@ -7,7 +7,7 @@ draft: false
 toc:
   enable: true
 categories: [""]
-tags: "C++"
+tags: [""]
 ---
 
 ## Item 1: 将 C++ 视为 federation of languages（语言联合体）

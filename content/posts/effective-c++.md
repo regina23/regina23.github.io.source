@@ -23,3 +23,18 @@ tags: [""]
 >
 > 
 
+## Item 2: 用const、enum和inline取代#define
+
+#define 在preprocessor（预处理器）中处理，const、enum和inline在compiler（编译器）中处理，所以也可以说用compiler（编译器）取代preprocessor（预处理器）。
+
+**原因：**
+
+例如定义了 ```#define ASPECT_RATIO 1.653```
+
+预处理器处理了`ASPECT_RATIO`这个变量，编译的时候`ASPECT_RATIO`可能就不会被加入符号表。在编译报错或者调试的时候信息可能会会用 `1.653`代替了`ASPECT_RATIO`，导致增加了排查难度。
+
+**解决方案：**
+
+使用常量const代替宏定义#define。```const double AspectRatio = 1.653;```
+
+因为语言层面的常量const会被编译器识别并加入符号表；并且对于这个例子的浮点数来说，使用常量const比使用宏定义#define能产生更小的代码。
